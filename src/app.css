@@ -4,6 +4,10 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+@import url('/src/css/avatar.css');
+@import url('/src/css/sidebar.css');
+@import url('/src/css/badge.css');
+@import url('/src/css/form.css');
 :root{  
     /***************  Familia Tipografica ***************/
 
@@ -35,6 +39,7 @@
     --france-700:#2671B9;
     --france-800:#2163A2;
     --france-900:#1C558B;
+
 
     /* Green */
     --green-50:#EEFAEF;
@@ -97,21 +102,18 @@
     --zinc-800:#27272A;
     --zinc-900:#18181B;
 
+    --zinc\/20: #71717a33;
+    --zinc\/40: #71717a66;
+    --zinc\/60: #71717a99;
+    --zinc\/80: #71717acc;
+
+    --border-light: 1px solid var(--zinc\/60);
+    --border-light-focus: 1px solid var(--zinc-400);
+
+    --border-dark: 1px solid var(--zinc-200);
+    --border-dark-focus: 1px solid var(--zinc-300);
     /***************  Utilitarios ***************/
-    /* sizing */
-    --size-0: 0;
-    --size-1: .5rem;
-    --size-2: 1rem;
-    --size-3: 1.5rem;
-    --size-4: 2rem;
-    --size-5: 2.5rem;
-    --size-6: 3rem;
-    --size-7: 3.5rem;
-    --size-8: 4rem;
-    --size-9: 4.5rem;
-    --size-10: 5rem;
-    --size-11: 5.5rem;
-    --size-12: 6rem;
+
 }
 
 
@@ -123,12 +125,16 @@
   box-sizing: border-box;
 }
 
+*,
+body,
 html{
-    font-size: 10px;
     font-family: var(--text-font-family);
     line-height: var(--text-line-height);
     
     scroll-behavior: smooth;
+}
+html{
+    font-size: 10px;
 }
 p,
 span,
@@ -219,6 +225,57 @@ h6, .h6, .text-xs{
 
 
 /************ Layout: Container -  ************/
+.w-0{ width: 0; }
+.w-5{ width: .5rem; }
+.w-10{ width: 1rem; }
+.w-15{ width: 1.5rem; }
+.w-20{ width: 2rem; }
+.w-25{ width: 2.5rem; }
+.w-30{ width: 3rem; }
+.w-35{ width: 3.5rem; }
+.w-40{ width: 4rem; }
+.w-45{ width: 4.5rem; }
+.w-50{ width: 5rem; }
+.w-55{ width: 5.5rem; }
+.w-60{ width: 6rem; }
+.w-65{ width: 6.5rem; }
+.w-70{ width: 7rem; }
+.w-75{ width: 7.5rem; }
+.w-80{ width: 8rem; }
+.w-85{ width: 8.5rem; }
+.w-90{ width: 9rem; }
+.w-95{ width: 9.5rem; }
+.w-100{ width: 10rem; }
+.w-105{ width: 10.5rem; }
+.w-110{ width: 11rem; }
+.w-115{ width: 11.5rem; }
+.w-120{ width: 12rem; }
+
+.h-0{ height: 0; }
+.h-5{ height: .5rem; }
+.h-10{ height: 1rem; }
+.h-15{ height: 1.5rem; }
+.h-20{ height: 2rem; }
+.h-25{ height: 2.5rem; }
+.h-30{ height: 3rem; }
+.h-35{ height: 3.5rem; }
+.h-40{ height: 4rem; }
+.h-45{ height: 4.5rem; }
+.h-50{ height: 5rem; }
+.h-55{ height: 5.5rem; }
+.h-60{ height: 6rem; }
+.h-65{ height: 6.5rem; }
+.h-70{ height: 7rem; }
+.h-75{ height: 7.5rem; }
+.h-80{ height: 8rem; }
+.h-85{ height: 8.5rem; }
+.h-90{ height: 9rem; }
+.h-95{ height: 9.5rem; }
+.h-100{ height: 10rem; }
+.h-105{ height: 10.5rem; }
+.h-110{ height: 11rem; }
+.h-115{ height: 11.5rem; }
+.h-120{ height: 12rem; }
 
 .container,
 .container-sm,
@@ -228,20 +285,45 @@ h6, .h6, .text-xs{
 .container-xxl,
 .container-fluid{
     width: 100%;
-    padding-right: var(--size-8);
-    padding-left: var(--size-8);
+    max-width: 100%;
+    padding-right: 4rem;
+    padding-left: 4rem;
     margin-right: auto;
     margin-left: auto;
 }
-.container-fluid,
-.container-xxl,
-.container-xl,
-.container-lg,
-.container-md,
-.container-sm,
-.container{
-    max-width: 100%;
-}
+
+.p-relative{ position: relative; }
+.p-absolute{ position: absolute; }
+.p-fixed{ position: fixed; }
+.p-sticky{ position: sticky; }
+
+.mx-0{ margin-left: 0; margin-right: 0; }
+.mx-1{ margin-left: .5rem; margin-right: .5rem; }
+.mx-2{ margin-left: 1rem; margin-right: 1rem; }
+.mx-3{ margin-left: 1.5rem; margin-right: 1.5rem; }
+.mx-4{ margin-left: 2rem; margin-right: 2rem; }
+.mx-5{ margin-left: 2.5rem; margin-right: 2.5rem; }
+.mx-6{ margin-left: 3rem; margin-right: 3rem; }
+.mx-7{ margin-left: 3.5rem; margin-right: 3.5rem; }
+.mx-8{ margin-left: 4rem; margin-right: 4rem; }
+.mx-9{ margin-left: 4.5rem; margin-right: 4.5rem; }
+.mx-10{ margin-left: 5rem; margin-right: 5rem; }
+.mx-11{ margin-left: 5.5rem; margin-right: 5.5rem;}
+.mx-12{ margin-left: 6rem; margin-right: 6rem; }
+
+.my-0{ margin-top: 0; margin-bottom: 0; }
+.my-1{ margin-top: .5rem; margin-bottom: .5rem; }
+.my-2{ margin-top: 1rem; margin-bottom: 1rem; }
+.my-3{ margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.my-4{ margin-top: 2rem; margin-bottom: 2rem; }
+.my-5{ margin-top: 2.5rem; margin-bottom: 2.5rem; }
+.my-6{ margin-top: 3rem; margin-bottom: 3rem; }
+.my-7{ margin-top: 3.5rem; margin-bottom: 3.5rem; }
+.my-8{ margin-top: 4rem; margin-bottom: 4rem; }
+.my-9{ margin-top: 4.5rem; margin-bottom: 4.5rem; }
+.my-10{ margin-top: 5rem; margin-bottom: 5rem; }
+.my-11{ margin-top: 5.5rem; margin-bottom: 5.5rem;}
+.my-12{ margin-top: 6rem; margin-bottom: 6rem; }
 
 @media (min-width:640px){
     .container-fluid,
@@ -265,7 +347,7 @@ h6, .h6, .text-xs{
         --font-size-lg: 2.4rem;
         --font-size-md: 1.6rem;
         --font-size-sm: 1.4rem;
-        --font-size-xs: 1.3rem;
+        --font-size-xs: 1.2rem;
     }
     .container-fluid,
     .container-xxl,
@@ -332,4 +414,3 @@ h6, .h6, .text-xs{
         max-width: 1420px;
     }
 }
-@import url(/src/css/sidebar.css);
